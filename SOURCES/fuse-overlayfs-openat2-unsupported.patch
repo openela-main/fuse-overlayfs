@@ -1,0 +1,12 @@
+diff -up fuse-overlayfs-1.4.0/utils.c.openat2 fuse-overlayfs-1.4.0/utils.c
+--- fuse-overlayfs-1.4.0/utils.c.openat2	2021-01-29 11:59:00.678257784 +0100
++++ fuse-overlayfs-1.4.0/utils.c	2021-01-29 11:59:06.801365184 +0100
+@@ -81,7 +81,7 @@ syscall_openat2 (int dirfd, const char *
+ int
+ safe_openat (int dirfd, const char *pathname, int flags, mode_t mode)
+ {
+-  static bool openat2_supported = true;
++  static bool openat2_supported = false;
+ 
+   if (openat2_supported)
+     {
