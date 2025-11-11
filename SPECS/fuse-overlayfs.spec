@@ -3,12 +3,12 @@
 %{!?_modulesloaddir:%global _modulesloaddir %{_usr}/lib/modules-load.d}
 
 Name: fuse-overlayfs
-Version: 1.14
-Release: 2%{?dist}
+Version: 1.15
+Release: 1%{?dist}
 Summary: FUSE overlay+shiftfs implementation for rootless containers
 License: GPLv3+
 URL: %{git0}
-ExclusiveArch: aarch64 %{arm} ppc64le s390x x86_64
+ExclusiveArch: aarch64 %{arm} ppc64le s390x x86_64 riscv64
 Source0: %{git0}/archive/v%{version}.tar.gz
 BuildRequires: autoconf
 BuildRequires: automake
@@ -65,6 +65,13 @@ modprobe fuse > /dev/null 2>&1 || :
 %{_modulesloaddir}/fuse-overlayfs.conf
 
 %changelog
+* Fri May 09 2025 Jindrich Novy <jnovy@redhat.com> - 1.15-1
+- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.15
+- Related: RHEL-80817
+
+* Fri Mar 14 2025 JasenChao <JasenChao@gmail.com> - 1.14-3
+- Add riscv64 arch
+
 * Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com> - 1.14-2
 - Bump release for October 2024 mass rebuild:
   Resolves: RHEL-64018
