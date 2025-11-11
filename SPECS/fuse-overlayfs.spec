@@ -3,7 +3,7 @@
 %{!?_modulesloaddir:%global _modulesloaddir %{_usr}/lib/modules-load.d}
 
 Name: fuse-overlayfs
-Version: 1.14
+Version: 1.15
 Release: 1%{?dist}
 Summary: FUSE overlay+shiftfs implementation for rootless containers
 License: GPLv3+
@@ -65,6 +65,10 @@ modprobe fuse > /dev/null 2>&1 || :
 %{_modulesloaddir}/fuse-overlayfs.conf
 
 %changelog
+* Fri May 09 2025 Jindrich Novy <jnovy@redhat.com> - 1.15-1
+- update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.15
+- Related: RHEL-80816
+
 * Tue Jul 02 2024 Jindrich Novy <jnovy@redhat.com> - 1.14-1
 - update to https://github.com/containers/fuse-overlayfs/releases/tag/v1.14
 - Related: RHEL-27608
